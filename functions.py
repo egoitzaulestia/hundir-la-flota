@@ -48,7 +48,7 @@ def main():
     print()
 
     # Mensaje de bienvenida personalizado
-    print(f"¡Bienvenido a Hundir la Flota {player}!")  
+    print(f"¡Bienvenido a Hundir la Flota, {player}!")  
     print()
     time.sleep(.5)
 
@@ -64,9 +64,9 @@ def main():
     tablero_maquina.colocar_barcos_aleatoriamente()  # Colocación aleatoria de barcos en el tablero de la máquina
 
     while True:
-        print("\nTablero del Jugador:")
+        print("\n           Tablero del Jugador\n")
         imprimir_tablero(tablero_jugador.tablero_disparos)  # Imprimir el tablero de disparos del jugador
-
+        print()
         x = int(input("\nIntroduzca la coordenada de disparo X: "))  # Solicitar coordenada X para el disparo
         y = int(input("Introduzca la coordenada de disparo Y: "))  # Solicitar coordenada Y para el disparo
 
@@ -78,14 +78,15 @@ def main():
                 print("\n¡Has ganado!")  # Mensaje de victoria si se hunden todos los barcos de la máquina
                 break
 
-        print("\nTablero de la Máquina:")
+        print("\n          Tablero de la Máquina\n")
         imprimir_tablero(tablero_maquina.tablero_disparos)  # Imprimir el tablero de disparos de la máquina
+        print()
         print("\nTurno de la Máquina:")
         x = np.random.randint(0, DIMENSIONES_TABLERO - 1)  # Generar coordenada X aleatoria para el disparo de la máquina
         y = np.random.randint(0, DIMENSIONES_TABLERO - 1)  # Generar coordenada Y aleatoria para el disparo de la máquina
 
         resultado = tablero_jugador.disparar(x, y)  # Realizar disparo de la máquina en el tablero del jugador
-        print(f"La Máquina dispara a ({x}, {y}): {resultado}")  # Imprimir el resultado del disparo de la máquina
+        print(f"La Máquina dispara a ({x}, {y}):\n{resultado}")  # Imprimir el resultado del disparo de la máquina
 
         if resultado.startswith("¡Impacto en"):
             if tablero_jugador.verificar_victoria():

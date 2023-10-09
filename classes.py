@@ -64,11 +64,11 @@ class Tablero:
             barco = self.tablero[x][y]
             self.tablero[x][y] = "X"  # Marcamos como impactado
             self.tablero_disparos[x][y] = "X"  # Marcamos como disparado
-            return f"¡Impacto en {barco}!"
+            return "¡Impacto en barco!!"
         else:
             # Si no hay un barco en la posición del disparo, lo marcamos como agua en el tablero de disparos
             self.tablero_disparos[x][y] = "-"  # Marcamos como disparado
-            return "Agua"
+            return "¡Agua!"
     
     # Método que verifica si todos los barcos han sido impactados, es decir, si el jugador ha ganado
     def verificar_victoria(self):
