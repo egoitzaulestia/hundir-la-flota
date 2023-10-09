@@ -1,3 +1,3 @@
-# Hundir la flota - juego creado en python
+# Hundir la flota (python)
 
 ![imagen](./img/Navy_01.jpg)
